@@ -1,3 +1,4 @@
+
 # Global-Sales-Analysis-SQL-
 SQL-based analysis of global sales data focusing on revenue, cost efficiency, profitability, and customer behavior, with actionable business insights.
 
@@ -10,8 +11,6 @@ SQL-based analysis of global sales data focusing on revenue, cost efficiency, pr
 - Measure the impact of promotions and sales channels
 - Detect loss-making products
 
-## Tools Used
-- SQL (MySQL)
 
 ## Dataset
 The dataset contains transactional sales data including:
@@ -36,6 +35,8 @@ The dataset contains transactional sales data including:
 - Some products are sold at a loss, highlighting pricing inefficiencies
 - Promotions and sales channels significantly influence revenue
 - Customer segment and age trends help target marketing strategies
+
+# DATA SOURCE
 
 
 
