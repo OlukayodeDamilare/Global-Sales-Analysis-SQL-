@@ -36,7 +36,9 @@ The dataset contains transactional sales data including:
 - Promotions and sales channels significantly influence revenue
 - Customer segment and age trends help target marketing strategies
 
-# DATA SOURCE
+# Data Source
 
+
+[Global Sales SqL Project.txt](https://github.com/user-attachments/files/25161248/Global.Sales.SqL.Project.txt)
 
 
