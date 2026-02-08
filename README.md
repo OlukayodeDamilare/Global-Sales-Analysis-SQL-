@@ -1,4 +1,4 @@
-
+[Global Sales Analysis (SQL).sql](https://github.com/user-attachments/files/25161263/Global.Sales.Analysis.SQL.sql)
 # Global-Sales-Analysis-SQL-
 SQL-based analysis of global sales data focusing on revenue, cost efficiency, profitability, and customer behavior, with actionable business insights.
 
@@ -38,7 +38,6 @@ The dataset contains transactional sales data including:
 
 # Data Source
 
-
-[Global Sales SqL Project.txt](https://github.com/user-attachments/files/25161248/Global.Sales.SqL.Project.txt)
+[GB_Queries.sql](https://github.com/user-attachments/files/25161329/GB_Queries.sql)
 
 
