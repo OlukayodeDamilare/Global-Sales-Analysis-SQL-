@@ -19,9 +19,39 @@ The dataset contains transactional sales data including:
 - Quantity sold, total sales, profit
 - Customer demographics (segment, age)
 - Sales channels, payment modes, and promotion codes
-- Region and country information
+- Region and country information.
 
-## Key Business Questions Answered
+The data was first explored and used in *MySQL Workbench* then exported and analyzed further using *Power Bi*
+
+# Tools
+  + SQL (MySQL Workbench) for
+      + Data Exploration
+      + Aggregation
+      + Joins, subqueries, Case, Windows Functions.
+  + Vs Code - for organizing files
+  + Git & Github - for version control.
+
+
+# Introduction
+The project explores and simulates a real-world retail or sales data to answer key business questions. The goal is to demonstrate data cleaning, SQL queries, and visualization skills where a company wants to:
+
+ + Understand total sales performance (Revenue,Cost and Profit)
+ + Identify top products and customers
+ + Analyze Customer behavior
+ + See sales trends over time
+ + Classify Profit into categories such as High / Medium / Low
+ + Use both SQL skills to extract value from the data.
+
+
+Sustainable Development Goals (SDG) Relevance This project demonstrates how sales and business analytics can contribute to the following SDGs:
+
+ + Identifies top-performing products and customers to improve business performance and economic activity.
+ + Uses SQL and data analytics to modernize decision-making processes and optimize operations.
+ + Helps businesses analyze trends to reduce waste, avoid overproduction, and optimize resource use.
+
+# Exploratory Data Analysis
+The following key business questions were answered:
+
 - What is the total revenue, total cost, and profit?
 - Which products generate the highest profit?
 - Which regions and countries perform best?
@@ -29,12 +59,16 @@ The dataset contains transactional sales data including:
 - Do promotions improve profitability?
 - Are any products sold below cost?
 
-## Key Insights
+# Key Insights
 - A small number of products contribute a significant portion of total profit
 - Certain regions outperform others in profitability
 - Some products are sold at a loss, highlighting pricing inefficiencies
 - Promotions and sales channels significantly influence revenue
 - Customer segment and age trends help target marketing strategies
+
+# Visualizations
+
+
 
 # Data Source
 
