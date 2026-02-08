@@ -5,10 +5,21 @@ This project analyzes a global sales dataset using SQL to uncover business insig
 
 The project demonstrates end-to-end data analysis skills including data cleaning, validation, aggregation, window functions, and business insight generation.
 
+# Key Metrics Snapshot
+| Metric                  | Value            |
+|-------------------------|----------------|
+| Total Revenue           | $12,420,397     |
+| Total Profit            | $4,050,170      |
+| Profit Margin           | 32.61%          |
+| Total Transactions      | 10,030          |
+| Top Product             | SmartPhone X    |
+| Top Customer Segment    | Enterprise 
+
+
 
 ## Dataset Description
 
-+ The dataset contains transactional sales records with the following key attributes:
+# The dataset contains transactional sales records with the following key attributes:
 
 + 	Transaction ID
 + 	Date
@@ -23,33 +34,28 @@ The project demonstrates end-to-end data analysis skills including data cleaning
 
 The data was first explored and used in *MySQL Workbench* then exported and analyzed further using *Power Bi*
 
-# Tools
-  + SQL (MySQL Workbench) for
-      + Data Exploration
-      + Aggregation
-      + Joins, subqueries, Case, Windows Functions.
-  + Vs Code - for organizing files
-  + Business Performance Analysis.
+# Tools and Technologies
++	SQL (MySQL Workbench) – Data exploration, aggregation, joins, subqueries, CASE statements, window functions
++	VS Code – Organizing scripts and documentation
++ Power BI – Business performance visualization.
+  
 
  # Data Cleaning & Preparation
++ Removed rows with critical missing values
++ Trimmed text fields to eliminate inconsistencies
++ Converted monetary columns to numeric data types
++ Validated profit calculations by recomputing profit from unit price, cost, and quantity
++ Standardized column names for consistency.
 
-The dataset was cleaned and standardized to ensure accuracy and consistency:
-
-+	Identified and removed rows with critical missing values
-+	Trimmed text fields to eliminate inconsistencies
-+	Converted monetary columns to numeric data types
-+	Validated profit calculations by recomputing profit from unit price, cost, and quantity
-+	Ensured column naming consistency for analysis.
+This ensures accurate and reliable analysis.
 
 This step ensured the dataset was reliable for downstream analysis.
 
-
-# Introduction
-The project explores and simulates a real-world retail or sales data to answer key business questions. The goal is to demonstrate data cleaning, SQL queries, and visualization skills where a company wants to identify:
-
-+ What is the overall revenue, cost, and profit performance of the business
-+	Which products contribute the most to revenue and profit
-+	Are there products being sold at a loss
+# Business Questions
+# The analysis addresses the following key questions:
++	What are the total revenue, cost, and profit of the business
++	Which products contribute most to revenue and profit
++	Are any products sold at a loss
 +	Which regions and countries are most profitable
 +	Which customer segments deliver the highest value
 +	How do sales channels impact profitability
@@ -57,32 +63,21 @@ The project explores and simulates a real-world retail or sales data to answer k
 +	How does customer age vary across segments
 +	Which products rank highest in profitability.
 
-
 Sustainable Development Goals (SDG) Relevance This project demonstrates how sales and business analytics can contribute to the following SDGs:
 
  + Identifies top-performing products and customers to improve business performance and economic activity.
  + Uses SQL and data analytics to modernize decision-making processes and optimize operations.
  + Helps businesses analyze trends to reduce waste, avoid overproduction, and optimize resource use.
 
-# Exploratory Data Analysis
-The following key business questions were answered:
-
-+ What is the total revenue, total cost, and profit
-+ Which products generate the highest profit
-+ Which regions and countries perform best
-+ Which customer segments are most valuable
-+ Do promotions improve profitability
-+ Are any products sold below cost.
-
 # Key Insights
-+ The business generates strong revenue with a positive profit margin; however, revenue growth does not always translate proportionally into profit, indicating pricing and cost inefficiencies.
-+	A small group of products contributes the majority of total revenue and profit, while several low-profit products dilute overall performance.
-+	Certain regions and countries generate high revenue but comparatively low profit, suggesting operational or pricing inefficiencies.
-+	Customer segments vary significantly in value, with specific segments contributing disproportionately to total sales and profit.
-+	Sales channels show mixed performance, with some driving high volume but low profitability and others delivering fewer transactions with stronger margins.
-+	Promotional campaigns increase transaction volume but do not consistently improve profit, only a subset of promotions delivers meaningful profit impact.
-+	Customer age differs across segments, indicating varying purchasing behaviors and preferences.
-+	Product profitability ranking clearly separates high-, medium-, and low-profit products, highlighting where the business creates the most value.
++ Strong revenue and positive profit margin, but revenue growth does not always translate into proportional profit, highlighting pricing and cost inefficiencies.
++ A small number of products drive the majority of revenue and profit; several low-profit products dilute overall performance.
++ Some regions and countries generate high revenue but relatively low profit, suggesting operational or pricing inefficiencies.
++ Customer segments vary in value, with specific segments contributing disproportionately to total sales and profit.
++ Sales channels show mixed performance: some drive high volume but low profitability, others generate fewer transactions with higher margins.
++ Promotions increase transaction volume but only some campaigns improve profit.
++ Customer age differs across segments, reflecting varying purchasing behaviors and preferences.
++ Profitability ranking clearly separates high-, medium-, and low-profit products, highlighting where the business creates the most value.
 
 # Visualizations
 All visualizations were created using Power BI based on the SQL analysis:
@@ -102,7 +97,7 @@ All visualizations were created using Power BI based on the SQL analysis:
 
 
 
-3. Top Product contributing to revenue
+3. Top Product by Revenue and Profit
 + "SmartPhone X" is the top product generated the highest
      + Total Sales  = $989,364
      +  Total Profit = $315,974
@@ -181,7 +176,56 @@ Promotion greatly increased the business profit, This Visuals showed the amount 
 +	Use customer demographics to design segment-specific marketing strategies that boost conversions and lifetime value.
 +	Leverage product profitability rankings to guide inventory, pricing, and long-term product strategy.
 
+#SqL Snippet
+
+### Inspecting Null Values
+```sql
+SELECT *
+FROM global_sales_data
+WHERE transaction_id IS NULL
+   OR date IS NULL
+   OR product IS NULL;
+```
+
+### Cleaning Text Column
+```sql
+UPDATE global_sales_data
+SET transaction_id = TRIM(transaction_id),
+    product = TRIM(product),
+    category = TRIM(category),
+    sales_rep = TRIM(sales_rep),
+    country = TRIM(country),
+    channel = TRIM(channel);
+```
+### Overall Business Metrics
+```sql
+SELECT 
+    COUNT(transaction_id) AS total_transactions,
+    SUM(Total Sales) AS total_revenue,
+    SUM(cost) AS total_cost,
+    SUM(profit) AS total_profit,
+    ROUND((SUM(profit)/SUM(Total Sales)) * 100, 2) AS profit_margin_percentage
+FROM global_sales_data;
+```
+
+```sql
+SELECT product, SUM(Profit) AS Total_Profit
+FROM global_sales_data
+GROUP BY product
+ORDER BY Total_Profit DESC
+LIMIT 10;
+```
+
+### Product Profitability Rank
+```sql
+SELECT product, SUM(profit) AS total_profit,
+       RANK() OVER (ORDER BY SUM(profit) DESC) AS profit_rank
+FROM global_sales_data
+GROUP BY product;
+```
+
 # limitations
+
 + Incomplete or missing data: Some transactions had null or missing values, which could affect accuracy despite cleaning efforts.
 + Static dataset: Analysis is based on historical data; trends may shift over time.
 + Simplified cost assumptions: Profit was calculated using unit price and cost; other operational expenses (e.g., shipping, returns handling) were not included.
@@ -189,6 +233,7 @@ Promotion greatly increased the business profit, This Visuals showed the amount 
 + Promotions were analyzed based on total sales and profit, but other factors like customer retention or brand loyalty were not considered.
 
 # Conclusion
+
 This analysis highlights how SQL can be used not only to query data but to drive strategic business insights. By focusing on profitability, customer value, and operational efficiency, the project demonstrates a practical, business-oriented approach to data analysis suitable for real-world decision-making.
  
 # Data Source
