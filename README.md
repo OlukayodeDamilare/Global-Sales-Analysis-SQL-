@@ -67,7 +67,10 @@ The following key business questions were answered:
 - Customer segment and age trends help target marketing strategies
 
 # Visualizations
+All visualizations were created using Power BI based on the SQL analysis:
+1. Overall Business Performance Metrics
 
+[Overall Performance Metrics](https://github.com/user-attachments/assets/f8634901-a5c3-49fc-af81-d676fd0362eb)
 
 
 # Data Source
