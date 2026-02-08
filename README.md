@@ -1,25 +1,25 @@
 [Global Sales Analysis (SQL).sql](https://github.com/user-attachments/files/25161263/Global.Sales.Analysis.SQL.sql)
 # Global-Sales-Analysis-SQL-
-SQL-based analysis of global sales data focusing on revenue, cost efficiency, profitability, and customer behavior, with actionable business insights.
+
+This project analyzes a global sales dataset using SQL to uncover business insights related to revenue, cost efficiency, profitability, customer behavior, and regional performance. The goal is to support data-driven decision-making by identifying profit drivers, inefficiencies, and growth opportunities across products, regions, customer segments, and sales channels.
+
+The project demonstrates end-to-end data analysis skills including data cleaning, validation, aggregation, window functions, and business insight generation.
 
 
-## Objectives
-- Assess overall business performance (revenue, cost, profit, profit margin)
-- Identify top-performing products, regions, and countries
-- Evaluate pricing and cost efficiency
-- Analyze customer segments and purchasing behavior
-- Measure the impact of promotions and sales channels
-- Detect loss-making products
+## Dataset Description
 
++ The dataset contains transactional sales records with the following key attributes:
 
-## Dataset
-The dataset contains transactional sales data including:
-- Product details (name, category)
-- Pricing and cost information
-- Quantity sold, total sales, profit
-- Customer demographics (segment, age)
-- Sales channels, payment modes, and promotion codes
-- Region and country information.
++ 	Transaction ID
++ 	Date
++   Product & Category
++   Quantity
++   Unit Price, Cost, Total Sales, Profit
++   Region & Country
++   Sales Channel
++   Customer ID, Age, and Segment
++   Payment Mode
++   Promotional Codes.
 
 The data was first explored and used in *MySQL Workbench* then exported and analyzed further using *Power Bi*
 
@@ -29,18 +29,33 @@ The data was first explored and used in *MySQL Workbench* then exported and anal
       + Aggregation
       + Joins, subqueries, Case, Windows Functions.
   + Vs Code - for organizing files
-  + Git & Github - for version control.
+  + Business Performance Analysis.
+
+ # Data Cleaning & Preparation
+
+The dataset was cleaned and standardized to ensure accuracy and consistency:
+
++	Identified and removed rows with critical missing values
++	Trimmed text fields to eliminate inconsistencies
++	Converted monetary columns to numeric data types
++	Validated profit calculations by recomputing profit from unit price, cost, and quantity
++	Ensured column naming consistency for analysis.
+
+This step ensured the dataset was reliable for downstream analysis.
 
 
 # Introduction
-The project explores and simulates a real-world retail or sales data to answer key business questions. The goal is to demonstrate data cleaning, SQL queries, and visualization skills where a company wants to:
+The project explores and simulates a real-world retail or sales data to answer key business questions. The goal is to demonstrate data cleaning, SQL queries, and visualization skills where a company wants to identify:
 
- + Understand total sales performance (Revenue,Cost and Profit)
- + Identify top products and customers
- + Analyze Customer behavior
- + See sales trends over time
- + Classify Profit into categories such as High / Medium / Low
- + Use both SQL skills to extract value from the data.
++ What is the overall revenue, cost, and profit performance of the business
++	Which products contribute the most to revenue and profit
++	Are there products being sold at a loss
++	Which regions and countries are most profitable
++	Which customer segments deliver the highest value
++	How do sales channels impact profitability
++	Do promotions improve profit or only increase sales volume
++	How does customer age vary across segments
++	Which products rank highest in profitability.
 
 
 Sustainable Development Goals (SDG) Relevance This project demonstrates how sales and business analytics can contribute to the following SDGs:
@@ -52,29 +67,133 @@ Sustainable Development Goals (SDG) Relevance This project demonstrates how sale
 # Exploratory Data Analysis
 The following key business questions were answered:
 
-- What is the total revenue, total cost, and profit?
-- Which products generate the highest profit?
-- Which regions and countries perform best?
-- Which customer segments are most valuable?
-- Do promotions improve profitability?
-- Are any products sold below cost?
++ What is the total revenue, total cost, and profit
++ Which products generate the highest profit
++ Which regions and countries perform best
++ Which customer segments are most valuable
++ Do promotions improve profitability
++ Are any products sold below cost.
 
 # Key Insights
-- A small number of products contribute a significant portion of total profit
-- Certain regions outperform others in profitability
-- Some products are sold at a loss, highlighting pricing inefficiencies
-- Promotions and sales channels significantly influence revenue
-- Customer segment and age trends help target marketing strategies
++ The business generates strong revenue with a positive profit margin; however, revenue growth does not always translate proportionally into profit, indicating pricing and cost inefficiencies.
++	A small group of products contributes the majority of total revenue and profit, while several low-profit products dilute overall performance.
++	Certain regions and countries generate high revenue but comparatively low profit, suggesting operational or pricing inefficiencies.
++	Customer segments vary significantly in value, with specific segments contributing disproportionately to total sales and profit.
++	Sales channels show mixed performance, with some driving high volume but low profitability and others delivering fewer transactions with stronger margins.
++	Promotional campaigns increase transaction volume but do not consistently improve profit, only a subset of promotions delivers meaningful profit impact.
++	Customer age differs across segments, indicating varying purchasing behaviors and preferences.
++	Product profitability ranking clearly separates high-, medium-, and low-profit products, highlighting where the business creates the most value.
 
 # Visualizations
 All visualizations were created using Power BI based on the SQL analysis:
 1. Overall Business Performance Metrics
+  Showing the KpI
+ + Total Revenue = $12,420,397
+ + Total Cost = $8,370,227
+ + Total Profit = $4,050,170
+ + Profit Margin  = 32.61%
+ + Total Transactions = 10,030
 
-[Overall Performance Metrics](https://github.com/user-attachments/assets/f8634901-a5c3-49fc-af81-d676fd0362eb)
+![Overall Performance Metrics](https://github.com/user-attachments/assets/d13526b4-aa38-4883-9824-3a56a971355a)
+
+2. Prduct Profit Classification
+
+![Product&#39;s Profit Classification](https://github.com/user-attachments/assets/531320f6-cbda-420c-abc4-94fdc29cf7d8)
 
 
+
+3. Top Product contributing to revenue
++ "SmartPhone X" is the top product generated the highest
+     + Total Sales  = $989,364
+     +  Total Profit = $315,974
++ followed closely by "Tablet Mini" generating
+     + $954,251 in Total Sales and $307,470 in Total Profit.
+
+![Revenue and Profit per each Product](https://github.com/user-attachments/assets/ac83f945-2c7f-4e5f-a54b-25de92c01841)
+
+4. Revenue and Profit generated by each Customer Segment
++ "Enterprise" Customer Segement generated the highest with
+     + Total Sales = 3,154,385
+     + Total Profit = $1,013,679
++ followed close by "Consumer" segement with
+    + Total Sales = $3,116,693
+    +  Total Profit = $1,019,285
+ + However "Small enterprise" generated the lowest wth
+    + Total Sales =  $3,061,382
+    + Total Profit = $989,935 
+
+
+![Revenue and Profit by each customer segment](https://github.com/user-attachments/assets/eb203b3b-09a6-424d-b83a-8b37e7060af9)
+
+6. Revenue and Profit generated by each Sales Channel
++ "Reseller" Sales Channel generated the highest revenue with
+     + Total Sales = $3,151,863
+     + Total Profit  = $1,026,773
++ However "Retail" Store Generated the lowest Revenue with
+     + Total Sales = $3,040,781
+     +  Total Profit = $998,184.
+
+![Revenue and Profit by sales channel](https://github.com/user-attachments/assets/5f52c608-f9f8-4677-95fd-5c372f790955)
+
+6. Top 10 countries contributing Revenue and Profit
++ "New Zealand" generated the highest Revenue with
+     + Total Sales = $1,022,609
+     +  Total Profit =	$336,423
++ followed close by "USA" with
+     + Total Sales = $656,140
+     + Total Profit =	$216,348.
+
+![Top 10 Countries per Revenue and Profit](https://github.com/user-attachments/assets/124beff9-abd2-4d6a-ab5a-e3dc39c907c1)
+
+7. Customers Preffered Payment Mode
++ "MOBILE" Payment Mode has the highest number of transactions completed with
+     + 2,578 Total Transactions
++ However "CARD" (credit/debit) has the lowest number of transaction = 2,453 Transactions,
+
+![preferred payment per transactions](https://github.com/user-attachments/assets/344e5fe8-df5a-4f14-a00a-9d107b1b1f19)
+
+8. Promotion Impact on Profit
+Promotion greatly increased the business profit, This Visuals showed the amount of Profit generated on each promo_code 
++ Spring10 = $713,075
++ Welcome5 = $675,259
++ Summer20 = $675,259.
+
+![promotion impact on profit](https://github.com/user-attachments/assets/fa9273f5-6688-4274-ac7b-ad37f92b42eb)
+
+9. Average Customers Age by each Customer Segment
++ average customers age:
+   + Small Business = 46
+   + Enterprise = 47
+   + Consumer	= 46
+   + Education	= 46
+
+![Average Age per Customer Segment](https://github.com/user-attachments/assets/eac817ea-73e5-4645-8e72-4e487c0fd79d)
+
+## Strategic Recommendations
+
++ Focus on profit, not just revenue, track profit margin and profit per transaction.
++	Audit costs and pricing regularly to eliminate loss-making products through repricing.
++	Prioritize high-profit products for inventory, marketing, and sales. (optimize or remove low-profit items).
++	Invest in high-margin regions and improve efficiency in underperforming locations.
++	Target high-value customer segments with tailored marketing.
++	Allocate resources to high-margin sales channels and refine underperforming ones.
++	Run promotions based on profit impact, not sales volume, and scale only those that drive sustainable growth.
++	Use customer demographics to design segment-specific marketing strategies that boost conversions and lifetime value.
++	Leverage product profitability rankings to guide inventory, pricing, and long-term product strategy.
+
+# limitations
++ Incomplete or missing data: Some transactions had null or missing values, which could affect accuracy despite cleaning efforts.
++ Static dataset: Analysis is based on historical data; trends may shift over time.
++ Simplified cost assumptions: Profit was calculated using unit price and cost; other operational expenses (e.g., shipping, returns handling) were not included.
++ Limited predictive analysis: This project focuses on descriptive analytics; it does not forecast future sales or trends.
++ Promotions were analyzed based on total sales and profit, but other factors like customer retention or brand loyalty were not considered.
+
+# Conclusion
+This analysis highlights how SQL can be used not only to query data but to drive strategic business insights. By focusing on profitability, customer value, and operational efficiency, the project demonstrates a practical, business-oriented approach to data analysis suitable for real-world decision-making.
+ 
 # Data Source
 
-[GB_Queries.sql](https://github.com/user-attachments/files/25161329/GB_Queries.sql)
+[Global Sales Analysis (SQL).sql](https://github.com/user-attachments/files/25162092/Global.Sales.Analysis.SQL.sql)
+
 
 
