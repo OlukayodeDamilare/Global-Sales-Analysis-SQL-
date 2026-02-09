@@ -202,6 +202,17 @@ FROM global_sales_data
 GROUP BY product;
 ```
 
+# Key Metrics Snapshot
+| Metric                  | Value            |
+|-------------------------|----------------|
+| Total Revenue           | $12,420,397     |
+| Total Profit            | $4,050,170      |
+| Profit Margin           | 32.61%          |
+| Total Transactions      | 10,030          |
+| Top Product             | SmartPhone X    |
+| Top Customer Segment    | Enterprise |
+
+
 # Key Insights and Findings
 + Strong revenue and positive profit margin, but revenue growth does not always translate into proportional profit, highlighting pricing and cost inefficiencies.
 + A small number of products drive the majority of revenue and profit; several low-profit products dilute overall performance.
