@@ -1,4 +1,4 @@
-[Global Sales Analysis (SQL).sql](https://github.com/user-attachments/files/25161263/Global.Sales.Analysis.SQL.sql)
+
 # Global-Sales-Analysis-SQL-
 
 This project analyzes a global sales dataset using SQL to uncover business insights related to revenue, cost efficiency, profitability, customer behavior, and regional performance. The goal is to support data-driven decision-making by identifying profit drivers, inefficiencies, and growth opportunities across products, regions, customer segments, and sales channels.
@@ -69,15 +69,6 @@ Sustainable Development Goals (SDG) Relevance This project demonstrates how sale
  + Uses SQL and data analytics to modernize decision-making processes and optimize operations.
  + Helps businesses analyze trends to reduce waste, avoid overproduction, and optimize resource use.
 
-# Key Insights
-+ Strong revenue and positive profit margin, but revenue growth does not always translate into proportional profit, highlighting pricing and cost inefficiencies.
-+ A small number of products drive the majority of revenue and profit; several low-profit products dilute overall performance.
-+ Some regions and countries generate high revenue but relatively low profit, suggesting operational or pricing inefficiencies.
-+ Customer segments vary in value, with specific segments contributing disproportionately to total sales and profit.
-+ Sales channels show mixed performance: some drive high volume but low profitability, others generate fewer transactions with higher margins.
-+ Promotions increase transaction volume but only some campaigns improve profit.
-+ Customer age differs across segments, reflecting varying purchasing behaviors and preferences.
-+ Profitability ranking clearly separates high-, medium-, and low-profit products, highlighting where the business creates the most value.
 
 # Visualizations
 All visualizations were created using Power BI based on the SQL analysis:
@@ -164,20 +155,7 @@ Promotion greatly increased the business profit, This Visuals showed the amount 
 
 ![Average Age per Customer Segment](https://github.com/user-attachments/assets/eac817ea-73e5-4645-8e72-4e487c0fd79d)
 
-## Strategic Recommendations
-
-+ Focus on profit, not just revenue, track profit margin and profit per transaction.
-+	Audit costs and pricing regularly to eliminate loss-making products through repricing.
-+	Prioritize high-profit products for inventory, marketing, and sales. (optimize or remove low-profit items).
-+	Invest in high-margin regions and improve efficiency in underperforming locations.
-+	Target high-value customer segments with tailored marketing.
-+	Allocate resources to high-margin sales channels and refine underperforming ones.
-+	Run promotions based on profit impact, not sales volume, and scale only those that drive sustainable growth.
-+	Use customer demographics to design segment-specific marketing strategies that boost conversions and lifetime value.
-+	Leverage product profitability rankings to guide inventory, pricing, and long-term product strategy.
-
-#SqL Snippet
-
+# Sql Snippet
 ### Inspecting Null Values
 ```sql
 SELECT *
@@ -223,6 +201,29 @@ SELECT product, SUM(profit) AS total_profit,
 FROM global_sales_data
 GROUP BY product;
 ```
+
+# Key Insights and Findings
++ Strong revenue and positive profit margin, but revenue growth does not always translate into proportional profit, highlighting pricing and cost inefficiencies.
++ A small number of products drive the majority of revenue and profit; several low-profit products dilute overall performance.
++ Customer age differs across segments, reflecting varying purchasing behaviors and preferences.
++ Some regions and countries generate high revenue but relatively low profit, suggesting operational or pricing inefficiencies.
++ Customer segments vary in value, with specific segments contributing disproportionately to total sales and profit.
++ Sales channels show mixed performance: some drive high volume but low profitability, others generate fewer transactions with higher margins.
++ Promotions increase transaction volume but only some campaigns improve profit.
++ Profitability ranking clearly separates high-, medium-, and low-profit products, highlighting where the business creates the most value.
+
+## Strategic Recommendations
+
++ Focus on profit, not just revenue, track profit margin and profit per transaction.
++	Audit costs and pricing regularly to eliminate loss-making products through repricing.
++	Prioritize high-profit products for inventory, marketing, and sales. (optimize or remove low-profit items).
++	Use customer demographics to design segment-specific marketing strategies that boost conversions and lifetime value.
++	Invest in high-margin regions and improve efficiency in underperforming locations.
++	Target high-value customer segments with tailored marketing.
++	Allocate resources to high-margin sales channels and refine underperforming ones.
++	Run promotions based on profit impact, not sales volume, and scale only those that drive sustainable growth.
++	Leverage product profitability rankings to guide inventory, pricing, and long-term product strategy.
+
 
 # limitations
 
